@@ -3,24 +3,27 @@ import Form from "./Form";
 import { Link } from "react-router-dom";
 
 const LoginPage = () => {
-  const theme = useTheme();
+  // const theme = useTheme();
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
   return (
     <Box position="relative" height="100vh" overflow="hidden">
       {/* Header */}
       <Box
-        width="100%"
-        p="1rem 6%"
-        textAlign="left" // Aligns text to the left
         sx={{
-          ml: isNonMobileScreens ? "7rem" : "1.5rem", // Left margin for spacing
-          mt: "7rem", // Adds space at the top of the header
+          width: "100%",
+          p: { xs: "1rem", sm: "2rem", md: "1rem 6%" },
+          textAlign: "left",
+          ml: isNonMobileScreens ? "0rem" : "1.5rem",
+          mt: { xs: "4rem", sm: "5rem", md: "7rem" },
         }}
       >
         <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-          <Typography fontWeight="normal" fontSize="52px">
-            Join The Waitlist
+          <Typography
+            fontWeight="normal"
+            fontSize={{ xs: "32px", sm: "36px", md: "52px" }}
+          >
+            Join The Terms For Traders Waitlist
           </Typography>
         </Link>
       </Box>
